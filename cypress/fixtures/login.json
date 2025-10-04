@@ -1,0 +1,26 @@
+{
+  "users": {
+    "invalidUsername": "usuario_no_registrado",
+    "standardUsername": "standard_user",
+    "lockedOutUser": "locked_out_user",
+    "problemUser": "problem_user",
+    "performanceGlitchUser": "performance_glitch_user",
+    "errorUser": "error_user",
+    "visualUser": "visual_user"
+  },
+
+  "passwords": {
+    "validPassword": "secret_sauce",
+    "invalidPassword": "invalid_password"
+  },
+
+  "messages": {
+    "lockedOutUser": {
+      "errorMessageValidCredentials": "Epic sadface: Sorry, this user has been locked out."
+    },
+    "invalidCredentials": {
+      "errorMessage": "Epic sadface: Username and password do not match any user in this service"
+    },
+    "expected": {"title":"Swag Labs"}
+  }
+}
