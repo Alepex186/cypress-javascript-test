@@ -30,7 +30,7 @@ describe('Pruebas de Inicio de Sesión', () => {
     })
 
 
-    it('Debe mostrar el titulo Swag Labs', () => {
+    it('Debe mostrar un error al intentar iniciar sesión con contraseña inválida', () => {
 
 
         cy.get("[data-test='username']").type(loginData.users.standardUsername);
@@ -42,6 +42,56 @@ describe('Pruebas de Inicio de Sesión', () => {
             .should('be.visible')
             .and('contain', loginData.messages.invalidCredentials.errorMessage);
     })
+
+    it('Debe mostrar un error al intentar iniciar sesión sin ingresar credenciales', () => {
+
+        cy.get("[data-test='login-button']").click();
+
+        cy.get("[data-test='error']")
+            .should('be.visible')
+            .and('contain', loginData.messages.usernameIsRequired);
+    })
+
+    it('Debe mostrar un error al intentar iniciar sesión sin ingresar contraseña', () => {
+
+        cy.get("[data-test='username']").type(loginData.users.standardUsername);
+
+
+        cy.get("[data-test='login-button']").click();
+
+        cy.get("[data-test='error']")
+            .should('be.visible')
+            .and('contain', loginData.messages.passwordIsRequired);
+    })
+
+    it('Debe mostrar un error al intentar iniciar sesión sin ingresar usuario', () => {
+
+        cy.get("[data-test='password']").type(loginData.passwords.validPassword);
+
+        cy.get("[data-test='login-button']").click();
+
+        cy.get("[data-test='error']")
+            .should('be.visible')
+            .and('contain', loginData.messages.usernameIsRequired);
+    })
+
+
+    it('Debe mostrar un error al intentar iniciar sesión con usuario bloqueado', () => {
+
+        cy.get("[data-test='username']").type(loginData.users.lockedOutUser);
+        cy.get("[data-test='password']").type(loginData.passwords.validPassword);
+
+        cy.get("[data-test='login-button']").click();
+
+        cy.get("[data-test='error']")
+            .should('be.visible')
+            .and('contain', loginData.messages.usernameLocked);
+    })
+
+
+
+
+
 
     it('Debe mostrar el título Swag Labs', () => {
 

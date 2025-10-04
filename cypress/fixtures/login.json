@@ -21,6 +21,13 @@
     "invalidCredentials": {
       "errorMessage": "Epic sadface: Username and password do not match any user in this service"
     },
+    "usernameLocked": "Epic sadface: Sorry, this user has been locked out.",
+
+    "usernameIsRequired": "Epic sadface: Username is required",
+    "passwordIsRequired": "Epic sadface: Password is required",
+
+
+
     "expected": {"title":"Swag Labs"}
   }
 }
