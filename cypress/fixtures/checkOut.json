@@ -1,0 +1,9 @@
+{
+    "firstName":"Test",
+    "lastName":"testlastname",
+    "zipCode":"20000",
+
+    "messages": {
+        "expected": {"title":"Thank you for your order!"}
+  }
+}
